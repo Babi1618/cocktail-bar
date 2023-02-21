@@ -1,3 +1,11 @@
+import { CocktailList } from "../components/CocktailList";
+import SearchForm from "../components/SearchForm";
+
 export const CocktailsPage = () => {
-  return <div>Cocktails page</div>;
+  return (
+    <main>
+      <SearchForm />
+      <CocktailList />
+    </main>
+  );
 };

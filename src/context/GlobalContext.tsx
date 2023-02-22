@@ -16,9 +16,9 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
 
   const fetchData = async (url: string) => {
     const res = await fetch(`${url}${searchTerm}`).then((res) => res.json());
-
     return res;
   };
+  
   const getDrinks = async (url: string) => {
     const { drinks } = await fetchData(url);
     if (drinks) {

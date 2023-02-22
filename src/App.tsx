@@ -8,6 +8,7 @@ import { Home } from "./pages/Home";
 import { CocktailsPage } from "./pages/CocktailsPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import SingleDrinkPage from "./pages/SingleDrinkPage";
+import { CartPage } from "./pages/CartPage/CartPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<CocktailsPage />} />
           <Route path="about" element={<About />} />
           <Route path="cocktail/:id" element={<SingleDrinkPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

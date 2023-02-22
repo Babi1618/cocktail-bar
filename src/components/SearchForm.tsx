@@ -30,7 +30,6 @@ export default function SearchForm() {
             ref={searchValue}
             onChange={searchCocktail}
           />
-          <button onClick={handleSubmit}>Search</button>
         </div>
       </form>
     </section>

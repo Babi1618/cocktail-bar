@@ -335,7 +335,7 @@ Cocktail
 ======
 */
 
-.cocktail-section {
+.cocktail-section, .cart-section {
   text-align: center;
 }
 .drink {

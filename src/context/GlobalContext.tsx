@@ -27,7 +27,6 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
           strAlcoholic,
           strGlass,
         } = item
-
         return {
           id: idDrink,
           name: strDrink,
@@ -42,9 +41,11 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     }
     setLoading(false);
   };
+
   useEffect(() => {
     fetchAllCocktails();
   }, [searchTerm]);
+
   return (
     <GlobalContext.Provider
       value={{

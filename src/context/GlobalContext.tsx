@@ -14,28 +14,26 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
 
-  const fetchAllCocktails = async () => {
-    const res = await fetch(`${url}${searchTerm}`);
-    const data = await res.json();
-    const { drinks } = data;
+  const fetchData = async (url: string) => {
+    const res = await fetch(`${url}${searchTerm}`).then((res) => res.json());
+
+    return res;
+  };
+  const getDrinks = async (url: string) => {
+    const { drinks } = await fetchData(url);
     if (drinks) {
-      const newCocktails = drinks.map((item:any) => {
-        const {
-          idDrink,
-          strDrink,
-          strDrinkThumb,
-          strAlcoholic,
-          strGlass,
-        } = item
+      const newCocktails = drinks.map((item: any) => {
+        const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
+          item;
         return {
           id: idDrink,
           name: strDrink,
           image: strDrinkThumb,
           info: strAlcoholic,
           glass: strGlass,
-        }
-      })
-      setCocktails(newCocktails)
+        };
+      });
+      setCocktails(newCocktails);
     } else {
       setCocktails([]);
     }
@@ -43,7 +41,7 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    fetchAllCocktails();
+    getDrinks(url);
   }, [searchTerm]);
 
   return (

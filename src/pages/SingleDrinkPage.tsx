@@ -6,7 +6,11 @@ export default function SingleDrinkPage() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [cocktail, setCocktail] = useState<any>(null);
+
+  useEffect(()=>{
   console.log(id);
+  },[])
+  
   useEffect(() => {
     setLoading(true);
     async function getCocktail() {

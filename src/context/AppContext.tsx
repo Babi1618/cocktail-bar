@@ -11,10 +11,10 @@ export const AppContext = createContext({});
 
 export const AppContextProvider = (props: PropsWithChildren) => {
   const [isMobile, setIsMobile] = useState(false);
-  const initialState = {
-    cart: [],
-  };
-  const [state, dispatch] = useReducer(reducer, initialState) as any;
+  // const initialState = {
+  //   cart: [],
+  // };
+  // const [state, dispatch] = useReducer(reducer, initialState) as any;
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,19 +30,20 @@ export const AppContextProvider = (props: PropsWithChildren) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const increase = (id: number) => {
-    dispatch({ type: "INCREASE", payload: id });
-  };
-  const decrease = (id: number) => {
-    dispatch({ type: "DECREASE", payload: id });
-  };
+
+  // const increase = (id: number) => {
+  //   dispatch({ type: "INCREASE", payload: id });
+  // };
+  // const decrease = (id: number) => {
+  //   dispatch({ type: "DECREASE", payload: id });
+  // };
   return (
     <AppContext.Provider
       value={{
         isMobile,
-        ...state,
-        increase,
-        decrease,
+        // ...state,
+        // increase,
+        // decrease,
       }}
     >
       {props.children}

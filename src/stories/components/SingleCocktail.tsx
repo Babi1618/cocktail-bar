@@ -19,11 +19,11 @@ export default function SingleCocktail({
       <div className="cocktail-footer">
         <StyledTitleAndCount>
           <h3>{name}</h3>
-          <StyledCount>
+          {/* <StyledCount>
             <div onClick={() => console.log("meno", id)}>-</div>
             <div>0</div>
             <div onClick={() => console.log("più", id)}>+</div>
-          </StyledCount>
+          </StyledCount> */}
         </StyledTitleAndCount>
         <h4>{glass}</h4>
         <p>{info}</p>

@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<CocktailsPage />} />
           <Route path="about" element={<About />} />
           <Route path="cocktail/:id" element={<SingleDrinkPage />} />
-          <Route path="/cart" element={<CartPage />} />
+          {/* <Route path="/cart" element={<CartPage />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

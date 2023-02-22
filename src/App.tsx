@@ -7,6 +7,7 @@ import { Navbar } from "./sections/Navbar";
 import { Home } from "./pages/Home";
 import { CocktailsPage } from "./pages/CocktailsPage";
 import { ErrorPage } from "./pages/ErrorPage";
+import SingleDrinkPage from "./pages/SingleDrinkPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CocktailsPage />} />
           <Route path="about" element={<About />} />
-          {/* <Route path="cocktail/:id" element={<SingleCocktail />} /> */}
+          <Route path="cocktail/:id" element={<SingleDrinkPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

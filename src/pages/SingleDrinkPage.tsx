@@ -6,11 +6,12 @@ export default function SingleDrinkPage() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [cocktail, setCocktail] = useState<any>(null);
+  const [lang, setLang] = useState<string>("EN");
 
-  useEffect(()=>{
-  console.log(id);
-  },[])
-  
+  useEffect(() => {
+    console.log(id);
+  }, []);
+
   useEffect(() => {
     setLoading(true);
     async function getCocktail() {
@@ -27,6 +28,7 @@ export default function SingleDrinkPage() {
             strCategory: category,
             strGlass: glass,
             strInstructions: instructions,
+            strInstructionsIT: instructionsIT,
             strIngredient1,
             strIngredient2,
             strIngredient3,
@@ -47,6 +49,7 @@ export default function SingleDrinkPage() {
             category,
             glass,
             instructions,
+            instructionsIT,
             ingredients,
           };
           setCocktail(newCocktail);
@@ -66,8 +69,16 @@ export default function SingleDrinkPage() {
   if (!cocktail) {
     return <h2 className="section-title">no cocktail to display</h2>;
   } else {
-    const { name, image, category, info, glass, instructions, ingredients } =
-      cocktail;
+    const {
+      name,
+      image,
+      category,
+      info,
+      glass,
+      instructions,
+      instructionsIT,
+      ingredients,
+    } = cocktail;
     return (
       <section className="section cocktail-section">
         <Link to="/" className="btn btn-primary">
@@ -90,7 +101,10 @@ export default function SingleDrinkPage() {
               <span className="drink-data">glass :</span> {glass}
             </p>
             <p>
-              <span className="drink-data">instructons :</span> {instructions}
+              <span className="drink-data">instructons :</span>{" "}
+              {lang === "EN" ? instructions : instructionsIT}
+              <span className={`${lang==="EN" && `drink-lang-selected`}`} onClick={() => setLang("EN")}>EN</span>
+              <span className={`${lang==="IT" && `drink-lang-selected`}`} onClick={() => setLang("IT")}>IT</span>
             </p>
             <p>
               <span className="drink-data">ingredients :</span>

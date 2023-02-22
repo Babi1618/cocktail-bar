@@ -361,6 +361,9 @@ Cocktail
   border-radius: var(--mainBorderRadius);
   color: var(--primaryColor);
 }
+.drink-lang-selected{
+  color:red
+}
 .drink-info {
   padding-top: 2rem;
 }

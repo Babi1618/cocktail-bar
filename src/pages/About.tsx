@@ -1,8 +1,7 @@
 import { useGlobalContext } from "../context/GlobalContext";
 
 export const About = () => {
-  // const {hello}= useGlobalContext()as any
-  // console.log(hello)
+
   return (
     <section className="section about-section">
       <h1 className="section-title">About Us</h1>

@@ -3,11 +3,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SingleCocktail from "./SingleCocktail";
 import { withRouter } from "storybook-addon-react-router-v6";
 
-// import { SingleCocktail } from './SingleCocktail';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/SingleCocktail",
+  title: "Components/SingleCocktail",
   component: SingleCocktail,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -28,8 +27,12 @@ const Template: ComponentStory<typeof SingleCocktail> = (args) => (
 );
 
 export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-  //   primary: true,
-  //   label: 'SingleCocktail',
+  image:
+    "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+  name: "Margarita",
+  id: "11007",
+  info: "Cocktail glass",
+  glass:
+    "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
 };

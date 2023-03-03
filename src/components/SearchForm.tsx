@@ -11,12 +11,10 @@ export default function SearchForm() {
 
   function searchCocktail() {
     setSearchTerm(searchValue.current.value);
-    console.log(searchValue.current.value);
   }
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    console.log("ev", e);
   }
   return (
     <section className="section search">

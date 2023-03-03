@@ -11,11 +11,6 @@ export const AppContext = createContext({});
 
 export const AppContextProvider = (props: PropsWithChildren) => {
   const [isMobile, setIsMobile] = useState(false);
-  // const initialState = {
-  //   cart: [],
-  // };
-  // const [state, dispatch] = useReducer(reducer, initialState) as any;
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -31,19 +26,10 @@ export const AppContextProvider = (props: PropsWithChildren) => {
     };
   }, []);
 
-  // const increase = (id: number) => {
-  //   dispatch({ type: "INCREASE", payload: id });
-  // };
-  // const decrease = (id: number) => {
-  //   dispatch({ type: "DECREASE", payload: id });
-  // };
   return (
     <AppContext.Provider
       value={{
-        isMobile,
-        // ...state,
-        // increase,
-        // decrease,
+        isMobile
       }}
     >
       {props.children}

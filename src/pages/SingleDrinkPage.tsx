@@ -9,10 +9,6 @@ export default function SingleDrinkPage() {
   const [lang, setLang] = useState<string>("EN");
 
   useEffect(() => {
-    console.log(id);
-  }, []);
-
-  useEffect(() => {
     setLoading(true);
     async function getCocktail() {
       try {

@@ -6,10 +6,6 @@ import SingleCocktail, { SingleCocktailType } from "../stories/components/Single
 export const CocktailList = () => {
   const { cocktails, loading } = useGlobalContext() as any;
 
-  useEffect(() => {
-    // console.log("prova", cocktails);
-  }, [cocktails]);
-
   if (loading) {
     return <Loading />;
   }

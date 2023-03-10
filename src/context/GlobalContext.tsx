@@ -1,10 +1,11 @@
-import React,{
+import React, {
   createContext,
   PropsWithChildren,
   useContext,
   useEffect,
   useState,
 } from "react";
+import { SingleCoctktailFromApi } from "../utils/types";
 export const GlobalContext = createContext({});
 
 export const GlobalContextProvider = (props: PropsWithChildren) => {
@@ -17,11 +18,11 @@ export const GlobalContextProvider = (props: PropsWithChildren) => {
     const res = await fetch(`${url}${searchTerm}`).then((res) => res.json());
     return res;
   };
-  
+
   const getDrinks = async (url: string) => {
     const { drinks } = await fetchData(url);
     if (drinks) {
-      const newCocktails = drinks.map((item: any) => {
+      const newCocktails = drinks.map((item: SingleCoctktailFromApi) => {
         const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
           item;
         return {

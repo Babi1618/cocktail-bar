@@ -1,27 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React, { MutableRefObject, useEffect, useRef } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function SearchForm() {
-  const { setSearchTerm } = useGlobalContext() as any;
-  const searchValue = useRef("") as any;
-
+  const { setSearchTerm } = useGlobalContext() as { setSearchTerm:any};
+  const searchValue = useRef("") as MutableRefObject<any>;
   useEffect(() => {
     searchValue.current.focus();
   }, []);
 
   function searchCocktail() {
     setSearchTerm(searchValue.current.value);
+    console.log(setSearchTerm(searchValue.current.value));
   }
 
-  function handleSubmit(e: any) {
-    e.preventDefault();
-  }
   useEffect(() => {
     console.log(searchValue);
   }, [searchValue]);
   return (
     <section className="section search">
-      <form className="search-form" onSubmit={handleSubmit}>
+      <form className="search-form">
         <div className="form-control">
           <label htmlFor="name">search your favorite cocktail</label>
           <input

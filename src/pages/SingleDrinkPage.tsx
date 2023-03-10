@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { useParams, Link } from "react-router-dom";
+import { SingleCocktailType } from "../utils/types";
 
 export default function SingleDrinkPage() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
-  const [cocktail, setCocktail] = useState<any>(null);
+  const [cocktail, setCocktail] = useState<null | SingleCocktailType>(null);
   const [lang, setLang] = useState<string>("EN");
 
   useEffect(() => {
@@ -99,12 +100,24 @@ export default function SingleDrinkPage() {
             <p>
               <span className="drink-data">instructons :</span>{" "}
               {lang === "EN" ? instructions : instructionsIT}
-              <span className={`${lang==="EN" && `drink-lang-selected`}`} onClick={() => setLang("EN")}>EN</span>
-              <span className={`${lang==="IT" && `drink-lang-selected`}`} onClick={() => setLang("IT")}>IT</span>
+              <div>
+                <span
+                  className={`${lang === "EN" && `drink-lang-selected`}`}
+                  onClick={() => setLang("EN")}
+                >
+                  EN
+                </span>
+                <span
+                  className={`${lang === "IT" && `drink-lang-selected`}`}
+                  onClick={() => setLang("IT")}
+                >
+                  IT
+                </span>
+              </div>
             </p>
             <p>
               <span className="drink-data">ingredients :</span>
-              {ingredients.map((item: any, index: number) => {
+              {ingredients.map((item: string, index: number) => {
                 return item ? <span key={index}> {item}</span> : null;
               })}
             </p>

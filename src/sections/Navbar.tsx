@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { BurgerIcon } from "../icons/BurgerIcon";
 export const Navbar = () => {
-  const { isMobile } = useAppContext() as any;
+  const { isMobile } = useAppContext() as {isMobile: boolean};
   return (
     <nav className="navbar">
       <div className="nav-center">

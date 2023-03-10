@@ -1,9 +1,13 @@
 export type SingleCocktailType = {
   image?: string;
   name: string;
-  id: string;
+  id?: string;
   info?: string;
   glass?: string;
+  instructions?: any;
+  instructionsIT: any;
+  ingredients: any[];
+  category: any;
 };
 
 export type SingleCoctktailFromApi = {

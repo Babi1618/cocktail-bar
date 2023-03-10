@@ -177,10 +177,15 @@ Navbar
 
 .nav-title div:nth-child(2) > span {
   font-weight: 700;
+  color: var(--primaryColor);
 }
 .nav-image {
   height: 40px;
   width: 40px;
+}
+.nav-image >img{
+  border-radius: 50%;
+
 }
 .logo {
   width: 12rem;

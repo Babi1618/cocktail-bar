@@ -16,7 +16,7 @@ export const Navbar = () => {
               <img src={my_brand} alt="my_brand" />
             </div>
             <div>
-              My Cocktail Bar! <span>Cheers!</span>
+              My Cocktail Bar! <span>Cheers🥂!</span>
             </div>
           </div>
         </Link>

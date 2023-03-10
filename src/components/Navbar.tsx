@@ -2,17 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { BurgerIcon } from "../icons/BurgerIcon";
+
+import my_brand from "../assets/my_brand.png";
+
 export const Navbar = () => {
-  const { isMobile } = useAppContext() as {isMobile: boolean};
+  const { isMobile } = useAppContext() as { isMobile: boolean };
   return (
     <nav className="navbar">
       <div className="nav-center">
         <Link to="/">
-          <img
-            src="https://raw.githubusercontent.com/john-smilga/react-projects/6574161e31be78f1f4a6171b98f7f002d6fb0130/15-cocktails/final/src/logo.svg"
-            alt="my logo"
-            className="logo"
-          />
+          <div className="nav-title">
+            <div className="nav-image">
+              <img src={my_brand} alt="my_brand" />
+            </div>
+            <div>
+              My Cocktail Bar! <span>Cheers!</span>
+            </div>
+          </div>
         </Link>
         <ul className="nav-links">
           {isMobile ? (

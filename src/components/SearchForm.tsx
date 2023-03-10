@@ -2,7 +2,7 @@ import React, { MutableRefObject, useEffect, useRef } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 
 export default function SearchForm() {
-  const { setSearchTerm } = useGlobalContext() as { setSearchTerm:any};
+  const { setSearchTerm } = useGlobalContext() as { setSearchTerm: any };
   const searchValue = useRef("") as MutableRefObject<any>;
   useEffect(() => {
     searchValue.current.focus();

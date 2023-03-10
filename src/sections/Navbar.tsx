@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { BurgerIcon } from "../icons/BurgerIcon";

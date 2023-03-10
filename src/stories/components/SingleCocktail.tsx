@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  StyledCount,
-  StyledTitleAndCount,
-} from "../../components/SingleDrink/SingleDrink.styled";
+import { StyledTitleAndCount } from "../../components/SingleDrink/SingleDrink.styled";
+import { SingleCocktailType } from "../../utils/types";
+
 export default function SingleCocktail({
   image,
   name,
@@ -30,10 +29,10 @@ export default function SingleCocktail({
   );
 }
 
-export type SingleCocktailType = {
-  image?: string;
-  name: string;
-  id: string;
-  info?: string;
-  glass?: string;
-};
+// export type SingleCocktailType = {
+//   image?: string;
+//   name: string;
+//   id: string;
+//   info?: string;
+//   glass?: string;
+// };

@@ -1,10 +1,14 @@
-import { useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import Loading from "./Loading";
-import SingleCocktail, { SingleCocktailType } from "../stories/components/SingleCocktail";
+import SingleCocktail from "../stories/components/SingleCocktail";
+import { SingleCocktailType } from "../utils/types";
 
 export const CocktailList = () => {
-  const { cocktails, loading } = useGlobalContext() as any;
+  const { cocktails, loading } = useGlobalContext() as {
+    cocktails: SingleCocktailType[];
+    loading: boolean;
+  };
 
   if (loading) {
     return <Loading />;
@@ -16,7 +20,7 @@ export const CocktailList = () => {
     <section className="section">
       <h2 className="section-title">cocktails</h2>
       <div className="cocktails-center">
-        {cocktails.map((el: any) => {
+        {cocktails.map((el: SingleCocktailType) => {
           return <SingleCocktail key={el.id} {...el} />;
         })}
       </div>

@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../context/GlobalContext";
+import React from "react"
 
 export const About = () => {
 

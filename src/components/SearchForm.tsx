@@ -16,6 +16,9 @@ export default function SearchForm() {
   function handleSubmit(e: any) {
     e.preventDefault();
   }
+  useEffect(() => {
+    console.log(searchValue);
+  }, [searchValue]);
   return (
     <section className="section search">
       <form className="search-form" onSubmit={handleSubmit}>

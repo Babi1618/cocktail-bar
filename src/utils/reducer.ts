@@ -1,8 +1,8 @@
-
 export const reducer = (state: any, action: any) => {
   if (action.type === "TOGGLE_AMOUNT") {
-    let tempCart: any = state.cart
+    const tempCart: any = state.cart
       .map((cartItem: any) => {
+        console.log(cartItem);
         if (cartItem.id === action.payload.id) {
           if (action.payload.type === "inc") {
             return { ...cartItem, amount: cartItem.amount + 1 };

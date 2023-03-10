@@ -1,9 +1,8 @@
-import {
+import React,{
   createContext,
   PropsWithChildren,
   useContext,
   useEffect,
-  useReducer,
   useState,
 } from "react";
 export const GlobalContext = createContext({});

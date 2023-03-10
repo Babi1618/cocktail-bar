@@ -1,12 +1,10 @@
-import {
+import React, {
   createContext,
   PropsWithChildren,
   useContext,
   useEffect,
-  useReducer,
   useState,
 } from "react";
-import reducer from "../utils/reducer";
 export const AppContext = createContext({});
 
 export const AppContextProvider = (props: PropsWithChildren) => {
@@ -29,7 +27,7 @@ export const AppContextProvider = (props: PropsWithChildren) => {
   return (
     <AppContext.Provider
       value={{
-        isMobile
+        isMobile,
       }}
     >
       {props.children}

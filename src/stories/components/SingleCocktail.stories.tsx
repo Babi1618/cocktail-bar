@@ -3,12 +3,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SingleCocktail from "./SingleCocktail";
 import { withRouter } from "storybook-addon-react-router-v6";
 
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/SingleCocktail",
   component: SingleCocktail,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
   },
@@ -21,7 +18,6 @@ export default {
   },
 } as ComponentMeta<typeof SingleCocktail>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof SingleCocktail> = (args) => (
   <SingleCocktail {...args} />
 );
